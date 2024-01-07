@@ -1,0 +1,17 @@
+name: real_t_demo_psamathe_from_space
+description: Real time rendering of Psamathe from space
+version: 1.0.0
+publish_to: 'none'  
+
+environment:
+  sdk: '3.2.4'
+
+dependencies:
+  real_t_lib:
+    git:
+      url: git@github.com:rvanheers/real-t-lib.git
+    # path: C:/RealT/real-t-lib
+
+dev_dependencies:
+  build_runner: ^2.4.6
+  build_web_compilers: ^4.0.6
