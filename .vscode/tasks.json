@@ -1,0 +1,79 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "debug",
+			"type": "shell",
+			"args": [
+				"run",
+				"build_runner",
+				"serve",
+				"../index.html"
+			],
+			"command": "dart",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "custom",
+				"pattern": {
+					"regexp": "__________"
+				},
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "^\\[INFO\\] Starting Build",
+					"endsPattern": "^\\[INFO\\] Succeeded after"
+				}
+			}
+		},
+		{
+			"label": "build-js",
+			"type": "shell",
+			"command": "dart",
+			"args": [
+				"compile",
+				"js",
+				"--no-source-maps",
+				"-O2",
+				"-o",
+				"media/script/${workspaceFolderBasename}.js",
+				"web/main.dart"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "copy-texture",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"Remove-Item -Recurse -Force ${workspaceFolder}/build ; Copy-Item -Recurse ${workspaceFolder}/web/media/texture ${workspaceFolder}/build/media/texture"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+            "label": "release",
+            "dependsOn": ["copy-texture", "build-js"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+	]
+}
