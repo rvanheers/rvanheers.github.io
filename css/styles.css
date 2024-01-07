@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "font-default";
+  src: url("../font/cascadia_code.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: #dcdcdc;
+  background: black;
+  font-family: "font-default", sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template:
+    "a a a" 32px
+    "b c d" auto
+    "e e e" auto / 20% auto auto;
+}
+
+section {
+  display: none;
+  opacity: 0.0;
+  grid-area: c;
+  padding: 0 10px;
+  background: linear-gradient(29deg, rgb(71 21 65 / 50%) 21%, rgb(102 41 41 / 50%) 72%);
+  width: fit-content;
+  height: fit-content;
+  backdrop-filter: blur(4px);
+  box-shadow: 10px 10px 40px #000000;
+  border-radius: 14px;
+}
+
+@media (max-width: 640px) {
+  main {
+    grid-template:
+      "a" 32px
+      "c" auto
+      "e" auto / 1.0fr;
+  }
+
+  section {
+    border-radius: 0;
+    width: 100%;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 16px;
+  right: 0;
+  width: 100%;
+  background-color: #0f082e;
+  text-align: right;
+  padding-right: 16px;
+  background: linear-gradient(-90deg, #391e4bd9 0, #000000a2 70%);
+}
+
+h1 {
+  padding: 10px 0;
+  font-size: 24px;
+  text-transform: uppercase;
+  word-spacing: -7px;
+}
+
+p {
+  padding: 0 0 14px 0;
+  text-align: justify;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover {
+  color: #d3a555;
+}
+
+.no-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.scene {
+  z-index: -1;
+  display: none;
+  opacity: 0.0;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.scene canvas {
+  position: absolute;
+}
+
+.h-list {
+  padding: 0 0 14px 0;
+}
+
+.h-list p {
+  display: inline-block;
+  padding: 0 0 0 0;
+}
+
+.right-push {
+  padding-right: 4px;
+}
