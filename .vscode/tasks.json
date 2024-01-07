@@ -1,0 +1,56 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "copy-media",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"Remove-Item -Recurse -Force ${workspaceFolder}/media;",
+				"New-Item -ItemType Directory -Path '${workspaceFolder}/media';",
+				"Copy-Item -Recurse -Force ${workspaceFolder}/../real-t-demo-psamathe/web/media/. .;",
+				"Copy-Item -Recurse -Force ${workspaceFolder}/../real-t-demo-gltf/web/media/. .;",
+				//"Copy-Item -Recurse -Force ../real-t-demo-retro-neon/web/media/. .;",
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "build-real-t-demo-psamathe",
+			"type": "shell",
+			"command": "dart compile js --no-source-maps -O2 -o media/script/real-t-demo-psamathe.js ../real-t-demo-psamathe/web/script/main.dart",
+			"problemMatcher": []
+		},
+		{
+			"label": "build-real-t-demo-gltf",
+			"type": "shell",
+			"command": "dart compile js --no-source-maps -O2 -o media/script/real-t-demo-gltf.js ../real-t-demo-gltf/web/script/main.dart",
+			"problemMatcher": []
+		},
+		{
+			"label": "build-real-t-demo-retro-neon",
+			"type": "shell",
+			"command": "dart compile js --no-source-maps -O2 -o media/script/real-t-demo-retro-neon.js ../real-t-demo-retro-neon/web/script/main.dart",
+			"problemMatcher": []
+		},
+		{
+			"label": "build-rvanheers.github.io",
+			"type": "shell",
+			"command": "dart compile js --no-source-maps -O2 -o media/script/${workspaceFolderBasename}.js web/main.dart",
+			"problemMatcher": []
+		},
+		{
+            "label": "release",
+            "dependsOn": [
+				"copy-media",
+				"build-real-t-demo-psamathe",
+				"build-real-t-demo-gltf",
+				"build-real-t-demo-retro-neon",
+				"build-rvanheers.github.io"
+			],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+	]
+}
