@@ -1,0 +1,141 @@
+{
+  "planet": {
+    "value": {
+      "startRotation": 45.0,
+      "mapping": [ 4.0, 0, 0, 0, 2, 0, -2.0, -0.5, 0 ],
+      "mappingNote": "Translate(0.5, 0.5) * Scale(4.0, 2.0) * Translate(-0.5, -0.5)",
+      "shininess": 1.4,
+      "scale": 1.5,
+      "sobelStep": 0.00027,
+      "sobelStrength": 0.27,
+      "perlinMapping": [1.0, 1.0]
+    },
+    "debug": false,
+    "todo": {
+      "planetLightShifting": { "x": -3, "y": 0, "z": 0 },
+      "planetLightRotation": { "yaw": 5.09, "pitch": 0, "roll": 0.63 }
+    }
+  },
+  "emotions": {
+    "value": [
+      { "name": "joy", "intensity": 0.0, "color": "#0000FF", "latitude": 0.0, "longitude": 0.0, "altitude": 1.8, "speed": 10.0 },
+      { "name": "trust", "intensity": 0.0, "color": "#FFFFFF", "latitude": 0.0, "longitude": 45.0, "altitude": 1.8, "speed": 10.0 },
+      { "name": "fear", "intensity": 0.0, "color": "#FFFFFF", "latitude": 0.0, "longitude": 90.0, "altitude": 1.8, "speed": 10.0 },
+      { "name": "surprise", "intensity": 0.0, "color": "#FFFFFF", "latitude": 0.0, "longitude": 135.0, "altitude": 1.8, "speed": 10.0 },
+      { "name": "sadness", "intensity": 0.0, "color": "#FFFFFF", "latitude": 0.0, "longitude": 180.0, "altitude": 1.8, "speed": 10.0 },
+      { "name": "disgust", "intensity": 0.0, "color": "#FFFFFF", "latitude": 0.0, "longitude": 225.0, "altitude": 1.8, "speed": 10.0 },
+      { "name": "anger", "intensity": 0.0, "color": "#FFFFFF", "latitude": 0.0, "longitude": 270.0, "altitude": 1.8, "speed": 10.0 },
+      { "name": "anticipation", "intensity": 0.0, "color": "#FF0000", "latitude": 0.0, "longitude": 315.0, "altitude": 1.8, "speed": 10.0 }
+    ]
+  },
+  "emotionFlame": {
+    "value": {
+      "count": 10,
+      "duration": 5,
+      "scaleStart": 25,
+      "scaleFinal": 400,
+      "savescaleStart": 100,
+      "savescaleFinal": 1800,
+      "rotationRange": 0.6
+    }
+  },
+  "largeBufferBound": {
+    "value": { "x": 0, "y": 0, "width": 1024, "height": 1024 }
+  },
+  "smallBufferBound": {
+    "value": { "x": 0, "y": 0, "width": 128, "height": 128 }
+  },
+  "sphereResolution": {
+    "value": 4
+  },
+  "frustrum": {
+    "value": { "fov": 1.5, "aspect": 1.0, "near": 0.1, "far": 100.0 }
+  },
+  "viewPosition": {
+    "value": { "x": 0, "y": 0, "z": 3.0 }
+  },
+  "viewLookAt": {
+    "value": { "x": 0, "y": 0, "z": 0.0 }
+  },
+  "gamma": {
+    "value": 1.0
+  },
+  "skyboxScale": {
+    "value": 6.0
+  },
+  "skyboxMapping": {
+    "value": [ 3.0, 0, 0, 0, 1.5, 0, -0.6, -0.35, 0 ]
+  },
+  "atmosphereMaskScale": {
+    "value": 1.52
+  },
+  "atmosphereScale": {
+    "value": 1.6
+  },
+  "atmosphereMask": {
+    "value": {
+      "amplitude": 0.72,
+      "period": 7,
+      "x": 0.793,
+      "y": 0,
+      "outLimit": 0,
+      "inLimit": 1.0
+    }
+  },
+  "planetBorderMask": {
+    "value": {
+      "amplitude": 1,
+      "period": 173,
+      "x": 0.172,
+      "y": 0,
+      "outLimit": 0.321,
+      "inLimit": 0.364
+    }
+  },
+  "landscapeGradient": {
+    "value": {
+      "#221F4D": 0.0,
+      "#AB262C": 0.4,
+      "#D16A33": 0.6,
+      "#FEFB9A": 0.99,
+      "#FFFFFF": 1.0
+    },
+    "test": {
+      "#000000": 0,
+      "#221F4D": 0.06,
+      "#AB262C": 0.4,
+      "#D16A33": 0.6,
+      "#FEFB9A": 0.99,
+      "#FFFFFF": 1.0
+    },
+    "debug": false
+  },
+  "starfieldGradient": {
+    "value": {
+      "#000000": 0.1,
+      "#FFFFFF": 0.2
+    },
+    "debug": false
+  },
+  "nebulaGradient": {
+    "value": {
+      "#000000": 0,
+      "#660543": 0.17,
+      "#B04A4A": 0.36,
+      "#FFCA38": 0.67
+    },
+    "debug": false
+  },
+  "emotionGradient": {
+    "value": {
+      "start": {
+          "#000000" : 0.1
+      },
+      "offset": 0.2,
+      "final": {
+          "#FFFFFF" : 0.3
+      }
+    },
+    "debug": false
+  }
+}

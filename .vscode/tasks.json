@@ -1,0 +1,48 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "copy-media",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"Remove-Item -Recurse -Force ${workspaceFolder}/media;",
+				"New-Item -ItemType Directory -Path '${workspaceFolder}/media';",
+				"Copy-Item -Recurse -Force ${workspaceFolder}/../real-t-demo-psamathe/web/media/. .;",
+				"Copy-Item -Recurse -Force ${workspaceFolder}/../real-t-showcases/web/media/. .;",
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "build-real-t-demo-hbao",
+			"type": "shell",
+			"command": "dart compile js --no-source-maps -O2 -o media/script/real-t-demo-hbao.js ../real-t-showcases/web/script/hbao.dart",
+			"problemMatcher": []
+		},
+		{
+			"label": "build-real-t-demo-motion-blur",
+			"type": "shell",
+			"command": "dart compile js --no-source-maps -O2 -o media/script/real-t-demo-motion-blur.js ../real-t-showcases/web/script/motion_blur.dart",
+			"problemMatcher": []
+		},
+		{
+			"label": "build-rvanheers.github.io",
+			"type": "shell",
+			"command": "dart compile js --no-source-maps -O2 -o media/script/${workspaceFolderBasename}.js web/main.dart",
+			"problemMatcher": []
+		},
+		{
+            "label": "release",
+            "dependsOn": [
+				"copy-media",
+				"build-real-t-demo-hbao",
+				"build-real-t-demo-motion-blur",
+				"build-rvanheers.github.io"
+			],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+	]
+}
